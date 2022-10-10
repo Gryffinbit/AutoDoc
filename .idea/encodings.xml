@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Template_ICS.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/工控模板/Template_ICS.txt" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/工控模板/Template_ICS.txt" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/工控模板/Template_ICS.txt" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/工控模板/工控模板.txt" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/工控模板/工控模板.txt" charset="GB2312" />
     <file url="file://$PROJECT_DIR$/当前工作/Template_ICS.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/输出文档/ips_language.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/输出文档/ipsdocs/520521.txt" charset="GB2312" />
+    <file url="file://$PROJECT_DIR$/输出文档/ipsdocs/520521.txt" charset="GB2312" />
   </component>
 </project>

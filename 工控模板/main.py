@@ -1,10 +1,15 @@
 import codecs
 import re
 import os, sys
+from shutil import copyfile
 
 
 def sidReturn():
     return sid
+
+
+def cveReturn():
+    return cve
 
 
 class Auto:
@@ -18,15 +23,16 @@ class Auto:
         self.replace()
         self.test()
         sidReturn()
+        cveReturn()
 
     def read(self):
         # 读取规则文档
-        with open('rule.txt', 'r', encoding='gb2312') as f0:
+        with open('/Users/gryffinbit/PycharmProjects/AutoDoc/工控模板/rule.txt', 'r', encoding='gb2312') as f0:
             contents_rule = f0.read()
             self.contents_rule = contents_rule
 
         # 读取Template规则文档
-        with open('Template_ICS.txt', 'r', encoding='gb2312') as f1:
+        with open("/Users/gryffinbit/PycharmProjects/AutoDoc/工控模板/Template_ICS.txt", 'r', encoding='gb2312') as f1:
             contents_tmpl = f1.read()
             self.contents_tmpl = contents_tmpl
 
@@ -57,6 +63,7 @@ class Auto:
 class Interact:
     # 手动替换，需要进行输出输入，进行人工的交互
     def __init__(self):
+        self.msg_ch = None
         self.contents_tmpl_interact = None
         self.contents_rule_interact = None
 
@@ -64,10 +71,11 @@ class Interact:
         self.read()
         self.display()
         self.write()
+        self.translate()
 
     def read(self):
         # 读取规则文档
-        with open('rule.txt', 'r', encoding='gb2312') as f3:
+        with open('/Users/gryffinbit/PycharmProjects/AutoDoc/工控模板/rule.txt', 'r', encoding='gb2312') as f3:
             contents_rule_interact = f3.read()
             self.contents_rule_interact = contents_rule_interact
 
@@ -88,6 +96,7 @@ class Interact:
         """ msg翻译内容 """
         print("输入msg翻译")
         msg_ch = input()
+        self.msg_ch = msg_ch
         # 替换到相应的位置
         self.contents_tmpl_interact = self.contents_tmpl_interact.replace("__MSG__", str(msg_ch))
         # 将已经替换好的内容写入
@@ -139,11 +148,18 @@ class Interact:
         with open('Template_ICS.txt', 'w', encoding='gb2312') as f5:
             f5.write(self.contents_tmpl_interact)
 
+    def translate(self):
+        f = open("/Users/gryffinbit/PycharmProjects/AutoDoc/输出文档/ips_language.txt", "a",
+                 encoding="gb2312")  # 以写的格式打开先打开文件
+        f.write(str(sid) + ';' + '检测到' + self.msg_ch + '（' + str(cveReturn()) + '）')
+        f.write('\n')
+        f.close()
+
 
 if __name__ == '__main__':
     Auto().init()
     Interact().init()
     # 文档改好后，需要修改文件名，改成sid.txt
     name = sidReturn() + ".txt"
-    os.rename("当前工作/Template_ICS.txt",
-              "当前工作" + name)
+    os.rename("Template_ICS.txt",
+              "/Users/gryffinbit/PycharmProjects/AutoDoc/输出文档/ipsdocs/" + name)

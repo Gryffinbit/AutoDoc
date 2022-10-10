@@ -1,113 +1,16 @@
-Rule
---
-Sid:
-__SID__
---
 Summary:
 检测到异常的网络数据包，可能会触发 __MSG__(__CVE__)，__info__。建议通过工业防火墙阻断此数据包。
---
-Detailed Information:
-检测到异常的网络数据包，可能会触发 __MSG__(__CVE__)，__info__。建议通过工业防火墙阻断此数据包。
-__CVE__：__CVEINFO__
---
-Impact:
-造成 __MSG__
---
 Affected Systems:
 __AS__
 --
 Threat Type:
 漏洞利用::__Type__漏洞利用
---
-Threat Level:
-高危
---
-Kill Chain:
-__KCType__
+
 --
 Attck Stage:
 可属于不同阶段
 --
-Credibility:
-50%
---
-Is ICS_Rule:
-是
---
-Is WAF_Rule:
---
-Is Virtualization_Rule:
---
 Is Container_Rule:
 --
 Is Sensitive_Operation:
---
-Ease of Attack:
-容易
---
-Attack Scenarios:
---
-False Positives:
---
-False Negatives:
---
-Corrective Action:
-通过工业防火墙阻断
---
-Other Conditions:
-1、目标设备 __AS__
---
-Additional References:
-__CVE__
---
-Origin:
---
-Contributors:
-string@6cloudtech.com
---
-EN Summary:
---
-EN Detailed Information:
---
-EN Impact:
---
-EN Affected Systems:
---
-EN Threat Type:
---
-EN Threat Level:
---
-EN Kill Chain:
---
-EN Attck Stage:
---
-EN Credibility:
---
-EN Is ICS_Rule:
---
-EN Is WAF_Rule:
---
-EN Is Virtualization_Rule:
---
-EN Is Container_Rule:
---
-EN Is Sensitive_Operation:
---
-EN Ease of Attack:
---
-EN Attack Scenarios:
---
-EN False Positives:
---
-EN False Negatives:
---
-EN Corrective Action:
---
-EN Other Conditions:
---
-EN Additional References:
---
-EN Origin:
---
-EN Contributors:
---
+
